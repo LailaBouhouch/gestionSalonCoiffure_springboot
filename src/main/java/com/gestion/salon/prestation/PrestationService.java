@@ -1,5 +1,6 @@
 package com.gestion.salon.prestation;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ public class PrestationService {
 		return prestationRepository.save(prestation);
 	}
 	
-	
 	public void deletePrestationById(int id) {
 		prestationRepository.deleteById(id);
 	}
@@ -27,6 +27,10 @@ public class PrestationService {
 	public Prestation getPrestationById(int id) {
 		Optional<Prestation> prestation = prestationRepository.findById(id);
 		return prestation.get();
+	}
+	
+	public List<Prestation> getPrestationByIds(List<Integer> ids) {
+		return prestationRepository.findAllById(ids);
 	}
 	
 	public Prestation updatePrestation(int id,Prestation prestation) {

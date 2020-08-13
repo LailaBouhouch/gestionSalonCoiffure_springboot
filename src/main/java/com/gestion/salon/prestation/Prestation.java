@@ -33,13 +33,12 @@ public class Prestation {
 	@Column
 	private double prix;
 	
-	@OneToMany(cascade = {CascadeType.ALL})
-	private List<Employe> employes;
+//	@OneToMany(cascade = {CascadeType.ALL})
+//	private List<Employe> employes;
 	
-	@OneToMany(mappedBy = "prestation",
-			cascade = CascadeType.ALL,
-			orphanRemoval = true)
-	private List<RdvPrestation> rdvs = new ArrayList<>();
+//	@OneToMany(mappedBy = "prestation",
+//			cascade = CascadeType.ALL)
+//	private List<RdvPrestation> rdvs = new ArrayList<>();
 	
 
 }

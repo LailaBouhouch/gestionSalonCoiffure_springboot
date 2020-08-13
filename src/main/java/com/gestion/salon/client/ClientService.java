@@ -5,6 +5,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.gestion.salon.employe.Employe;
+
 
 @Service
 public class ClientService {
@@ -37,7 +39,11 @@ public class ClientService {
 		}
 	}
 	
-	public Client updateClient(int id,Client client) {
+	public Client getEmployeByNom(String nom) {
+		return clientRepository.findByNom(nom);
+	}
+	
+	public Client updateClient(int id, Client client) {
 		try {			
 			Client client1 = clientRepository.findById(id).get();
 			client1.setNom(client.getNom());
@@ -51,5 +57,8 @@ public class ClientService {
 		}
 	}
 	
-	
+	public Client getClientByNom(String nom) {
+		return clientRepository.findByNom(nom);
+	}
+
 }

@@ -9,12 +9,17 @@ import com.gestion.salon.employe.Employe;
 import com.gestion.salon.employe.EmployeRepository;
 import com.gestion.salon.global.JoursSemaine;
 import com.gestion.salon.person.Person;
+import com.gestion.salon.person.PersonRepository;
+import com.gestion.salon.prestation.Prestation;
+import com.gestion.salon.prestation.PrestationRepository;
 
 @SpringBootApplication
 public class GestionSalonApplication implements CommandLineRunner {
 	
+//	@Autowired
+//	PersonRepository employeRepo;
 	@Autowired
-	EmployeRepository employeRepo;
+	PrestationRepository prestationRepo;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(GestionSalonApplication.class, args);
@@ -23,14 +28,15 @@ public class GestionSalonApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-//		Person emp1 = new Employe(5, JoursSemaine.SAMEDI);
-////				Employe(1, 5, JoursSemaine.LUNDI);
-//		emp1.setNom("Laila");
-//		
-//		employeRepo.save(emp1);
+		Prestation pr1 = new Prestation(1, "Coloration", 2, 150.);
+		Prestation pr2 = new Prestation(2, "Brushing", 0.5, 50);
+		Prestation pr3 = new Prestation(3, "Soin Visage", 2, 250);
+		Prestation pr4 = new Prestation(4, "Manicure", 1, 150);
 		
-		System.out.println(employeRepo.findAll().toString());
-		
+		prestationRepo.save(pr1);
+		prestationRepo.save(pr2);
+		prestationRepo.save(pr3);
+		prestationRepo.save(pr4);
 	}
 
 

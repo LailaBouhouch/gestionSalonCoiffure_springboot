@@ -10,9 +10,23 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
+import com.fasterxml.jackson.core.JsonToken;
+import com.gestion.salon.client.Client;
+import com.gestion.salon.employe.Employe;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+//@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = As.PROPERTY, property = "person_type")
+//@JsonSubTypes({
+//	@Type(name = "Employe", value = Employe.class),
+//	@Type(name = "Client", value = Client.class)
+//})
 
 @Data 
 @AllArgsConstructor
